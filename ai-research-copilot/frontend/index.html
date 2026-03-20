@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Research Copilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <h1>AI Research Copilot</h1>
+      <p class="tagline">
+        Ingest technical documents, retrieve with FAISS, and analyze with structured LLM outputs.
+      </p>
+      <div id="status" class="status" aria-live="polite"></div>
+    </header>
+
+    <section class="panel">
+      <h2>Ingest</h2>
+      <label class="field">
+        <span>Title</span>
+        <input type="text" id="docTitle" placeholder="e.g. API design notes" />
+      </label>
+      <label class="field">
+        <span>Plain text</span>
+        <textarea id="docText" rows="6" placeholder="Paste technical notes, specs, or excerpts…"></textarea>
+      </label>
+      <div class="row">
+        <button type="button" id="btnIngestText">Index text</button>
+        <label class="file-btn">
+          <input type="file" id="fileInput" accept=".txt,.md,.pdf" hidden />
+          Upload .txt / .md / .pdf
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Ask</h2>
+      <label class="field">
+        <span>Question</span>
+        <textarea id="question" rows="3" placeholder="What does the document say about …?"></textarea>
+      </label>
+      <div class="row">
+        <button type="button" id="btnQuery">RAG answer</button>
+        <button type="button" id="btnAnalyze" class="secondary">
+          Structured analysis
+        </button>
+      </div>
+      <p class="hint">
+        Structured analysis returns key concepts, relationships, and a short summary from retrieved chunks.
+      </p>
+    </section>
+
+    <section class="panel output">
+      <h2>Results</h2>
+      <pre id="output" class="output-pre"></pre>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
