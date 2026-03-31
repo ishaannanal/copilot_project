@@ -67,6 +67,12 @@ ai-research-copilot/
   samples/              # Example markdown for testing
 ```
 
+Development History
+
+This project was originally built and iterated on locally before being published to GitHub. Earlier versions were not tracked in this repository, so the commit history here represents the point at which the project was prepared for public release.
+
+Ongoing development and improvements are now tracked through GitHub commits.
+
 ## License
 
 Use and modify freely for learning and portfolio work.
